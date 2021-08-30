@@ -1,0 +1,25 @@
+.container {
+    margin-top: 5%;
+}
+
+.row {
+    margin-top: 10px!important;
+    grid-template-rows: auto;
+}
+
+.col-2, .col-4 {
+    grid-template-columns: auto;
+}
+
+.col-4 {
+    padding-top: 10px;
+}
+
+.btn, input {
+    height: 7vh;
+    min-width: 100%;
+}
+
+.possibilities {
+    min-height: 100%;
+}
