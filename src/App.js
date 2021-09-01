@@ -9,9 +9,14 @@ function App() {
     document.getElementById("ev1").innerHTML = "Evidence 1";
     document.getElementById("ev2").innerHTML = "Evidence 2";
     document.getElementById("ev3").innerHTML = "Evidence 3";
+    let elements = document.querySelectorAll(".evBtn");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].disabled = false;
+        }
   }
 
-  function addEvidence(type) {
+  function addEvidence(type, btn) {
+    document.getElementById(type).disabled = true;
     switch (evidenceCount) {
       case 0:
         document.getElementById("ev1").innerHTML = `${type}`;
@@ -25,6 +30,10 @@ function App() {
 
       case 2:
         document.getElementById("ev3").innerHTML = `${type}`;
+        let elements = document.querySelectorAll(".evBtn");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].disabled = true;
+        }
         evidenceCount++
         break;
       default:
@@ -52,26 +61,26 @@ function App() {
         <div className="col-6">
           <div className="row">
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Emf level 5")}>Emf level 5</Button>
+              <Button variant="outline-primary" className="evBtn" id="Emf level 5" onClick={() => addEvidence("Emf level 5")}>Emf level 5</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Fingerprints")}>Fingerprints</Button>
+              <Button variant="outline-primary" className="evBtn" id="Fingerprints" onClick={() => addEvidence("Fingerprints")}>Fingerprints</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Ghost orbs")}>Ghost orbs</Button>
+              <Button variant="outline-primary" className="evBtn" id="Ghost orbs" onClick={() => addEvidence("Ghost orbs")}>Ghost orbs</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Spirit box")}>Spirit box</Button>
+              <Button variant="outline-primary" className="evBtn" id="Spirit box" onClick={() => addEvidence("Spirit box")}>Spirit box</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Ghost writing")}>Ghost writing</Button>
+              <Button variant="outline-primary" className="evBtn" id="Ghost writing" onClick={() => addEvidence("Ghost writing")}>Ghost writing</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("Freezing temps")}>Freezing temperatures</Button>
+              <Button variant="outline-primary" className="evBtn" id="Freezing temps" onClick={() => addEvidence("Freezing temps")}>Freezing temperatures</Button>
             </div>
             <div className="col-4"></div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => addEvidence("D.O.T.S projector")}>D.O.T.S projector</Button>
+              <Button variant="outline-primary" className="evBtn" id="D.O.T.S projector" onClick={() => addEvidence("D.O.T.S projector")}>D.O.T.S projector</Button>
             </div>
             <div className="col-4">
               <Button variant="outline-primary" onClick={() => reset()}>Reset</Button>
