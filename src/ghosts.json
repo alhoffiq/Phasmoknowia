@@ -1,0 +1,98 @@
+[
+    {
+        "type": "Phantom",
+        "evidence": ["Spirit box", "Fingerprints", "D.O.T.S projector"],
+        "strength": "Sanity drops considerably when looking at a Phantom",
+        "weakness": "Taking a photo of a Phantom will make it temporarily disappear"
+    },
+    {
+        "type": "Banshee",
+        "evidence": ["Ghost orbs", "Fingerprints", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Jinn",
+        "evidence": ["Ghost orbs", "Freezing temps", "Fingerprints"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Revenant",
+        "evidence": ["Freezing temps", "Ghost writing", "Ghost orbs"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Shade",
+        "evidence": ["EMF 5", "Freezing temps", "Ghost writing"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Oni",
+        "evidence": ["EMF 5", "Freezing temps", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Wraith",
+        "evidence": ["EMF 5", "Spirit box", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Mare",
+        "evidence": ["Spirit box", "Ghost writing", "Ghost orbs"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Demon",
+        "evidence": ["Freezing temps", "Ghost writing", "Fingerprints"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Yurei",
+        "evidence": ["Freezing temps", "Ghost orbs", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Poltergeist",
+        "evidence": ["Spirit box", "Ghost writing", "Fingerprints"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Spirit",
+        "evidence": ["EMF 5", "Spirit box", "Ghost writing"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Yokai",
+        "evidence": ["Spirit box", "Ghost orbs", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Hantu",
+        "evidence": ["Freezing temps", "Ghost orbs", "Fingerprints"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Goryo",
+        "evidence": ["EMF 5", "Fingerprints", "D.O.T.S projector"],
+        "strength": "",
+        "weakness": ""
+    },
+    {
+        "type": "Myling",
+        "evidence": ["EMF 5", "Ghost writing", "Fingerprints"],
+        "strength": "",
+        "weakness": ""
+    }
+]

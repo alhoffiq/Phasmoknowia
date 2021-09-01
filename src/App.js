@@ -61,7 +61,7 @@ function App() {
         <div className="col-6">
           <div className="row">
             <div className="col-4">
-              <Button variant="outline-primary" className="evBtn" id="Emf level 5" onClick={() => addEvidence("Emf level 5")}>Emf level 5</Button>
+              <Button variant="outline-primary" className="evBtn" id="EMF level 5" onClick={() => addEvidence("EMF level 5")}>Emf level 5</Button>
             </div>
             <div className="col-4">
               <Button variant="outline-primary" className="evBtn" id="Fingerprints" onClick={() => addEvidence("Fingerprints")}>Fingerprints</Button>
