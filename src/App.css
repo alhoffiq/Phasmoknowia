@@ -16,10 +16,18 @@
 }
 
 .btn, input {
-    height: 7vh;
+    height: 7vh!important;
     min-width: 100%;
 }
 
-.possibilities {
-    min-height: 100%;
+.evBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
+    border: 3px solid black;
+}
+
+#result {
+    height: 100%!important;
 }
