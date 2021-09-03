@@ -21,20 +21,14 @@ function App() {
   }
 
   function findGhost(ev1, ev2, ev3) {
+    console.log(`Evidence: ${ev1} ${ev2} ${ev3} `);
     for (let i = 0; i < ghosts.length; i++) {
       const ghost = ghosts[i];
-      if (ghost.evidence[0] === ev1 || ghost.evidence[1] === ev1 || ghost.evidence[2] === ev1) {
-        if (ghost.evidence[0] === ev2 || ghost.evidence[1] === ev2 || ghost.evidence[2] === ev2) {
-          if (ghost.evidence[0] === ev3 || ghost.evidence[1] === ev3 || ghost.evidence[2] === ev3) {
-            document.getElementById("ghost").innerHTML = `${ghost.type}`;
-          }
-          else {
-            document.getElementById("ghost").innerHTML = "None";
-          }
-        }
-        else {
-          document.getElementById("ghost").innerHTML = "None";
-        }
+      if (ghost.evidence.includes(ev1) && ghost.evidence.includes(ev2) && ghost.evidence.includes(ev3)) {
+        document.getElementById("ghost").innerHTML = `${ghost.type}`;
+        break;
+      } else {
+        document.getElementById("ghost").innerHTML = "None";
       }
     }
   }
