@@ -32,6 +32,9 @@ function App() {
             document.getElementById("ghost").innerHTML = "None";
           }
         }
+        else {
+          document.getElementById("ghost").innerHTML = "None";
+        }
       }
     }
   }
