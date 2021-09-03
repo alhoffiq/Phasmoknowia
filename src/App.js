@@ -1,39 +1,69 @@
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import ghosts from '../src/ghosts.json';
 
 function App() {
   let evidenceCount = 0;
+  let ev1 = "";
+  let ev2 = "";
+  let ev3 = "";
 
   function reset() {
     evidenceCount = 0;
     document.getElementById("ev1").innerHTML = "Evidence 1";
     document.getElementById("ev2").innerHTML = "Evidence 2";
     document.getElementById("ev3").innerHTML = "Evidence 3";
+    document.getElementById("ghost").innerHTML = "Ghost Type";
     let elements = document.querySelectorAll(".evBtn");
-        for (let i = 0; i < elements.length; i++) {
-          elements[i].disabled = false;
-        }
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].disabled = false;
+    }
   }
 
-  function addEvidence(type, btn) {
-    document.getElementById(type).disabled = true;
+  function findGhost(ev1, ev2, ev3) {
+    for (let i = 0; i < ghosts.length; i++) {
+      const ghost = ghosts[i];
+      if (ghost.evidence[0] === ev1 || ghost.evidence[1] === ev1 || ghost.evidence[2] === ev1) {
+        if (ghost.evidence[0] === ev2 || ghost.evidence[1] === ev2 || ghost.evidence[2] === ev2) {
+          if (ghost.evidence[0] === ev3 || ghost.evidence[1] === ev3 || ghost.evidence[2] === ev3) {
+            document.getElementById("ghost").innerHTML = `${ghost.type}`;
+          }
+          else {
+            document.getElementById("ghost").innerHTML = "None";
+          }
+        }
+      }
+    }
+  }
+
+  function addEvidence(evidence) {
+    document.getElementById(evidence).disabled = true;
     switch (evidenceCount) {
       case 0:
-        document.getElementById("ev1").innerHTML = `${type}`;
+        ev1 = evidence;
+        document.getElementById("ev1").innerHTML = `${evidence}`;
+
         evidenceCount++
         break;
 
       case 1:
-        document.getElementById("ev2").innerHTML = `${type}`;
+        ev2 = evidence;
+        document.getElementById("ev2").innerHTML = `${evidence}`;
+
         evidenceCount++
         break;
 
       case 2:
-        document.getElementById("ev3").innerHTML = `${type}`;
+        ev3 = evidence;
+
+        findGhost(ev1, ev2, ev3)
+
+        document.getElementById("ev3").innerHTML = `${evidence}`;
         let elements = document.querySelectorAll(".evBtn");
         for (let i = 0; i < elements.length; i++) {
           elements[i].disabled = true;
         }
+
         evidenceCount++
         break;
       default:
@@ -54,7 +84,7 @@ function App() {
           <h4 className="evBox" id="ev3">Evidence 3</h4>
         </div>
         <div className="col-6">
-          <h4 className="evBox" >Ghost Type</h4>
+          <h4 className="evBox" id="ghost" >Ghost Type</h4>
         </div>
       </div>
       <div className="row">
