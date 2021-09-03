@@ -20,11 +20,15 @@ function App() {
     }
   }
 
-  function findGhost(ev1, ev2, ev3) {
-    console.log(`Evidence: ${ev1} ${ev2} ${ev3} `);
+  /**
+   * 
+   * @param {array} providedEvidence  Array of evidence found
+   */
+  function findGhost(providedEvidence) {
     for (let i = 0; i < ghosts.length; i++) {
       const ghost = ghosts[i];
-      if (ghost.evidence.includes(ev1) && ghost.evidence.includes(ev2) && ghost.evidence.includes(ev3)) {
+      const isPossible = providedEvidence.every(evidence => ghost.evidence.includes(evidence));
+      if (isPossible) {
         document.getElementById("ghost").innerHTML = `${ghost.type}`;
         break;
       } else {
@@ -33,27 +37,50 @@ function App() {
     }
   }
 
+  /**
+ * Returns list of possible ghosts given a list of found evidence
+ * @param {array} providedEvidence Array of evidence found
+ * @returns An array of possible ghost objects
+ */
+function findPossibleGhosts(providedEvidence) {
+  const possibleGhosts = ghosts.filter((ghost) => {
+    const isPossible = providedEvidence.every(evidence => ghost.evidence.includes(evidence));
+    return isPossible;
+  });
+
+  return possibleGhosts;
+}
+  /**
+   * 
+   * @param {string} evidence String of evidence selected
+   */
   function addEvidence(evidence) {
     document.getElementById(evidence).disabled = true;
+    let collectedEvidence = [];
     switch (evidenceCount) {
       case 0:
         ev1 = evidence;
+        collectedEvidence = [ev1];
         document.getElementById("ev1").innerHTML = `${evidence}`;
+        console.log(findPossibleGhosts(collectedEvidence));
 
         evidenceCount++
         break;
 
       case 1:
         ev2 = evidence;
+        collectedEvidence = [ev1, ev2];
         document.getElementById("ev2").innerHTML = `${evidence}`;
+        console.log(findPossibleGhosts(collectedEvidence));
 
         evidenceCount++
         break;
 
       case 2:
         ev3 = evidence;
+        collectedEvidence = [ev1, ev2, ev3];
 
-        findGhost(ev1, ev2, ev3)
+        findGhost(collectedEvidence)
 
         document.getElementById("ev3").innerHTML = `${evidence}`;
         let elements = document.querySelectorAll(".evBtn");
