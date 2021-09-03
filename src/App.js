@@ -1,19 +1,22 @@
 import './App.css';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import ghosts from '../src/ghosts.json';
+import PossibilityList from '../src/PossibilityList.js'
 
 function App() {
-  let evidenceCount = 0;
-  let ev1 = "";
-  let ev2 = "";
-  let ev3 = "";
+  const [collectedEvidence, setEvidence] = useState([]);
+  let [evidenceCount, setCount] = useState(0);
+  const [possibilities, setPossibilities] = useState([]);
 
   function reset() {
-    evidenceCount = 0;
+    setCount(0);
     document.getElementById("ev1").innerHTML = "Evidence 1";
     document.getElementById("ev2").innerHTML = "Evidence 2";
     document.getElementById("ev3").innerHTML = "Evidence 3";
     document.getElementById("ghost").innerHTML = "Ghost Type";
+    setEvidence([]);
+    setPossibilities([]);
     let elements = document.querySelectorAll(".evBtn");
     for (let i = 0; i < elements.length; i++) {
       elements[i].disabled = false;
@@ -42,43 +45,37 @@ function App() {
  * @param {array} providedEvidence Array of evidence found
  * @returns An array of possible ghost objects
  */
-function findPossibleGhosts(providedEvidence) {
-  const possibleGhosts = ghosts.filter((ghost) => {
-    const isPossible = providedEvidence.every(evidence => ghost.evidence.includes(evidence));
-    return isPossible;
-  });
-
-  return possibleGhosts;
-}
+  function findPossibleGhosts() {
+    const possibleGhosts = ghosts.filter((ghost) => {
+      const isPossible = collectedEvidence.every(evidence => ghost.evidence.includes(evidence));
+      return isPossible;
+    });
+    setPossibilities(possibleGhosts)
+  }
   /**
    * 
    * @param {string} evidence String of evidence selected
    */
   function addEvidence(evidence) {
     document.getElementById(evidence).disabled = true;
-    let collectedEvidence = [];
     switch (evidenceCount) {
       case 0:
-        ev1 = evidence;
-        collectedEvidence = [ev1];
+        collectedEvidence.push(evidence)
+        findPossibleGhosts();
         document.getElementById("ev1").innerHTML = `${evidence}`;
-        console.log(findPossibleGhosts(collectedEvidence));
-
-        evidenceCount++
+        setCount(1);
         break;
 
       case 1:
-        ev2 = evidence;
-        collectedEvidence = [ev1, ev2];
+        collectedEvidence.push(evidence);
+        findPossibleGhosts();
         document.getElementById("ev2").innerHTML = `${evidence}`;
-        console.log(findPossibleGhosts(collectedEvidence));
-
-        evidenceCount++
+        setCount(2)
         break;
 
       case 2:
-        ev3 = evidence;
-        collectedEvidence = [ev1, ev2, ev3];
+        collectedEvidence.push(evidence);
+        setPossibilities([]);
 
         findGhost(collectedEvidence)
 
@@ -88,7 +85,7 @@ function findPossibleGhosts(providedEvidence) {
           elements[i].disabled = true;
         }
 
-        evidenceCount++
+        evidenceCount++;
         break;
       default:
         break;
@@ -142,7 +139,16 @@ function findPossibleGhosts(providedEvidence) {
           </div>
         </div>
         <div className="col-6">
-          <h4 className="evBox" id="result">Ghost possibilities</h4>
+          <ol>
+            {possibilities.slice(0, possibilities.length).map(possibility => {
+              return (
+                <PossibilityList
+                  key={possibility.type}
+                  ghost={possibility}
+                />
+              );
+            })}
+          </ol>
         </div>
       </div>
     </div>
