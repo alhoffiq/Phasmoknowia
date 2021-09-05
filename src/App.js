@@ -141,15 +141,30 @@ function App() {
         </div>
         <div className="col-6">
           <ol className="possibilities">
-            {possibilities.slice(0, possibilities.length).map(possibility => {
-              return (
-                <PossibilityList
-                  key={possibility.type}
-                  ghost={possibility}
-                  evidence={collectedEvidence}
-                />
-              );
-            })}
+            {possibilities.length > 1 &&
+              possibilities.slice(0, possibilities.length).map(possibility => {
+                console.log(possibilities)
+                return (
+                  <PossibilityList
+                    key={possibility.type}
+                    ghost={possibility}
+                    evidence={collectedEvidence}
+                    length={possibilities.length}
+                  />
+                );
+              })}
+            {possibilities.length === 1 &&
+              <div className="attributesBox">
+                <div className="strength">
+                  <h4 className="attributes">Strength: </h4>
+                  <p>{possibilities[0].strength}</p>
+                </div>
+                <div className="weakness">
+                  <h4 className="attributes">Weakness: </h4>
+                  <p>{possibilities[0].weakness}</p>
+                </div>
+              </div>
+            }
           </ol>
         </div>
       </div>

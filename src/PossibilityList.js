@@ -1,6 +1,9 @@
 
-const PossibilityList = function ({ ghost, evidence }) {
+const PossibilityList = function ({ ghost, evidence, length }) {
     let remainingEvidence = [];
+    let height = 100/length + "%";
+
+    console.log(height)
 
     for (let i = 0; i < 3; i++) {
         switch (evidence.length) {
@@ -21,7 +24,7 @@ const PossibilityList = function ({ ghost, evidence }) {
     }
 
     return (
-        <div className="possibility">
+        <div className="possibility" style={{height: height}}>
             <h4>{ghost.type} - </h4>
             <h5>{remainingEvidence[0]}</h5>
             {remainingEvidence.length > 1 &&
