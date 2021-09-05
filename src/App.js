@@ -76,6 +76,7 @@ function App() {
       case 2:
         collectedEvidence.push(evidence);
         setPossibilities([]);
+        findPossibleGhosts();
 
         findGhost(collectedEvidence)
 
@@ -145,6 +146,7 @@ function App() {
                 <PossibilityList
                   key={possibility.type}
                   ghost={possibility}
+                  evidence={collectedEvidence}
                 />
               );
             })}

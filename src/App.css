@@ -39,6 +39,7 @@
     align-items: center;
     height: calc(100%/8);
     margin-bottom: 0px;
+    white-space: pre;
 }
 
 #result {
