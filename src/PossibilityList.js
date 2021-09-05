@@ -1,9 +1,9 @@
 
 const PossibilityList = function ({ ghost }) {
     return (
-        <li>
+        <h5 className="possibility">
             {ghost.type}
-        </li>
+        </h5>
     )
 }
 

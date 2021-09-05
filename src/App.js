@@ -139,7 +139,7 @@ function App() {
           </div>
         </div>
         <div className="col-6">
-          <ol>
+          <ol className="possibilities">
             {possibilities.slice(0, possibilities.length).map(possibility => {
               return (
                 <PossibilityList
