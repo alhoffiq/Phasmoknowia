@@ -140,7 +140,7 @@ function App() {
           </div>
         </div>
         <div className="col-6">
-          <ol className="possibilities">
+          <ol className="possibilitiesBox">
             {possibilities.length > 1 &&
               possibilities.slice(0, possibilities.length).map(possibility => {
                 console.log(possibilities)
@@ -163,6 +163,11 @@ function App() {
                   <h4 className="attributes">Weakness: </h4>
                   <p>{possibilities[0].weakness}</p>
                 </div>
+              </div>
+            }
+            {possibilities.length === 0 && evidenceCount === 0 &&
+              <div className="emptyBox">
+                <h4>Possible ghosts</h4>
               </div>
             }
           </ol>
