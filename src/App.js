@@ -2,7 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import ghosts from '../src/ghosts.json';
-import PossibilityList from '../src/PossibilityList.js'
+import PossibilityList from '../src/PossibilityList.js';
+import Form from 'react-bootstrap/Form';
 
 function App() {
   const [collectedEvidence, setEvidence] = useState([]);
@@ -171,6 +172,32 @@ function App() {
               </div>
             }
           </ol>
+        </div>
+      </div>
+      <div className="row text-center infoBox">
+        <div className="col-3">
+          <Form.Label>Ghost's Name</Form.Label>
+          <Form.Control as="textarea" rows={1}></Form.Control>
+        </div>
+        <div className="col-3">
+          <Form.Label>Responds to</Form.Label>
+          <Form.Select>
+            <option>Unknown</option>
+            <option>Everyone</option>
+            <option>People alone</option>
+          </Form.Select>
+        </div>
+        <div className="col-6">
+          <Form.Label>Optional objectives</Form.Label>
+          <Form.Select>
+            <option></option>
+          </Form.Select>
+          <Form.Select>
+            <option></option>
+          </Form.Select>
+          <Form.Select>
+            <option></option>
+          </Form.Select>
         </div>
       </div>
     </div>

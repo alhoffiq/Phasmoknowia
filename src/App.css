@@ -44,6 +44,10 @@
     height: 100%;
 }
 
+.infoBox {
+    margin-top: 2vh!important;
+}
+
 .possibility {
     display: flex;
     justify-content: left;
@@ -67,4 +71,10 @@
 
 #result {
     height: 100%!important;
+}
+
+textarea {
+    resize: none!important;
+    overflow: hidden;
+    width: 100%
 }
