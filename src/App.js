@@ -10,6 +10,22 @@ function App() {
   let [evidenceCount, setCount] = useState(0);
   const [possibilities, setPossibilities] = useState([]);
 
+  const objectives =
+    <Form.Select className="info">
+      <option style={{ display: "none" }}></option>
+      <option>Find evidence of paranormal activity with an EMF Reader</option>
+      <option>Capture a photo of the ghost</option>
+      <option>Detect a ghost's presence with a Motion Sensor</option>
+      <option>Prevent the ghost from hunting with a Crucifix</option>
+      <option>Have a member of your team witness a Ghost event</option>
+      <option>Cleanse the area near the ghost using Smudge Sticks</option>
+      <option>Get a Ghost to walk through Salt</option>
+      <option>Repel the Ghost with a Smudge Stick while it's chasing someone</option>
+      <option>Get the Ghost to blow out a Candle</option>
+      <option>Have a member of the team escape the Ghost during a Hunt</option>
+      <option>Get an average sanity below 25%</option>
+    </Form.Select>
+
   function reset() {
     setCount(0);
     document.getElementById("ev1").innerHTML = "Evidence 1";
@@ -21,6 +37,13 @@ function App() {
     let elements = document.querySelectorAll(".evBtn");
     for (let i = 0; i < elements.length; i++) {
       elements[i].disabled = false;
+    }
+  }
+
+  function clear() {
+    const elements = document.getElementsByClassName("info");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].value = "";
     }
   }
 
@@ -177,27 +200,22 @@ function App() {
       <div className="row text-center infoBox">
         <div className="col-3">
           <Form.Label>Ghost's Name</Form.Label>
-          <Form.Control as="textarea" rows={1}></Form.Control>
+          <Form.Control as="textarea" rows={1} className="info"></Form.Control>
         </div>
         <div className="col-3">
           <Form.Label>Responds to</Form.Label>
-          <Form.Select>
-            <option>Unknown</option>
+          <Form.Select className="info">
+            <option style={{ display: "none" }}></option>
             <option>Everyone</option>
             <option>People alone</option>
           </Form.Select>
+          <Button variant="outline-primary" onClick={() => clear()}>Clear</Button>
         </div>
         <div className="col-6">
           <Form.Label>Optional objectives</Form.Label>
-          <Form.Select>
-            <option></option>
-          </Form.Select>
-          <Form.Select>
-            <option></option>
-          </Form.Select>
-          <Form.Select>
-            <option></option>
-          </Form.Select>
+          {objectives}
+          {objectives}
+          {objectives}
         </div>
       </div>
     </div>
