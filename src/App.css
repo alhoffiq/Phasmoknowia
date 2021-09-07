@@ -17,6 +17,8 @@
 .btn, input {
     height: 7vh!important;
     min-width: 100%;
+    background-image: url("/src/assets/paper.jpg");
+    background-size: cover;
 }
 
 .evBox {
