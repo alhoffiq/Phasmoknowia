@@ -3,7 +3,6 @@
 }
 
 .row {
-    margin-top: 10px!important;
     grid-template-rows: auto;
 }
 
@@ -70,6 +69,10 @@
 }
 
 #result {
+    height: 100%!important;
+}
+
+#clear {
     height: 100%!important;
 }
 

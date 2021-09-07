@@ -200,16 +200,25 @@ function App() {
       <div className="row text-center infoBox">
         <div className="col-3">
           <Form.Label>Ghost's Name</Form.Label>
-          <Form.Control as="textarea" rows={1} className="info"></Form.Control>
+          <Form.Control as="textarea" rows={1} className="info text-center"></Form.Control>
         </div>
         <div className="col-3">
-          <Form.Label>Responds to</Form.Label>
-          <Form.Select className="info">
-            <option style={{ display: "none" }}></option>
-            <option>Everyone</option>
-            <option>People alone</option>
-          </Form.Select>
-          <Button variant="outline-primary" onClick={() => clear()}>Clear</Button>
+          <div className="row">
+            <div className="col">
+              <Form.Label>Responds to</Form.Label>
+              <Form.Select className="info">
+                <option style={{ display: "none" }}></option>
+                <option>Everyone</option>
+                <option>People alone</option>
+              </Form.Select>
+            </div>
+          </div>
+          <div className="row"><pre> </pre></div>
+          <div className="row">
+            <div className="col">
+              <Button variant="outline-primary" id="clear" onClick={() => clear()}>Clear</Button>
+            </div>
+          </div>
         </div>
         <div className="col-6">
           <Form.Label>Optional objectives</Form.Label>
