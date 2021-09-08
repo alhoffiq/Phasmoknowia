@@ -17,8 +17,6 @@
 .btn, input {
     height: 7vh!important;
     min-width: 100%;
-    background-image: url("/src/assets/paper.jpg");
-    background-size: cover;
 }
 
 .evBox {
@@ -27,6 +25,11 @@
     align-items: center;
     height: 7vh;
     border: 3px solid black;
+}
+
+.evBtn, .resBtn, .possibilitiesBox, .evBox {
+    background-image: url("/src/assets/paper.jpg");
+    background-size: cover;
 }
 
 .possibilitiesBox {
@@ -45,8 +48,20 @@
     height: 100%;
 }
 
+.infoCol {
+    padding-top: 4vh;
+}
+
 .infoBox {
     margin-top: 2vh!important;
+    padding: 20px;
+    background-image: url("/src/assets/whiteboard.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.info {
+    margin-bottom: 2vh!important;
 }
 
 .possibility {

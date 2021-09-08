@@ -159,7 +159,7 @@ function App() {
               <Button variant="outline-primary" className="evBtn" id="D.O.T.S projector" onClick={() => addEvidence("D.O.T.S projector")}>D.O.T.S projector</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" onClick={() => reset()}>Reset</Button>
+              <Button variant="outline-primary" className="resBtn" onClick={() => reset()}>Reset</Button>
             </div>
           </div>
         </div>
@@ -198,11 +198,11 @@ function App() {
         </div>
       </div>
       <div className="row text-center infoBox">
-        <div className="col-3">
+        <div className="col-3 infoCol">
           <Form.Label>Ghost's Name</Form.Label>
           <Form.Control as="textarea" rows={1} className="info text-center"></Form.Control>
         </div>
-        <div className="col-3">
+        <div className="col-3 infoCol">
           <div className="row">
             <div className="col">
               <Form.Label>Responds to</Form.Label>
@@ -220,7 +220,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-6 infoCol">
           <Form.Label>Optional objectives</Form.Label>
           {objectives}
           {objectives}
