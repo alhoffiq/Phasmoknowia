@@ -56,8 +56,9 @@
     margin-top: 2vh!important;
     padding: 20px;
     background-image: url("/src/assets/whiteboard.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    height: 63vh;
 }
 
 .info {
