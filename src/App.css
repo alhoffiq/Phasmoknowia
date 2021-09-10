@@ -1,3 +1,12 @@
+@font-face {
+    font-family: OctoberCrow;
+    src: url("/src/assets/fonts/October\ Crow.ttf");
+}
+@font-face {
+    font-family: Yahfie;
+    src: url("/src/assets/fonts/Yahfie-Normal.ttf");
+}
+
 .container {
     margin-top: 5%;
 }
@@ -58,7 +67,7 @@
     background-image: url("/src/assets/whiteboard.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 63vh;
+    height: 65vh;
 }
 
 .info {
