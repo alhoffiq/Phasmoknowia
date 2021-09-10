@@ -25,10 +25,10 @@ const PossibilityList = function ({ ghost, evidence, length }) {
 
     return (
         <div className="possibility" style={{height: height}}>
-            <h4>{ghost.type} - </h4>
-            <h5>{remainingEvidence[0]}</h5>
+            <span>{ghost.type} - </span>
+            <span>{remainingEvidence[0]}</span>
             {remainingEvidence.length > 1 &&
-                <h5> - {remainingEvidence[1]}</h5>}
+                <span> - {remainingEvidence[1]}</span>}
         </div>
     )
 }

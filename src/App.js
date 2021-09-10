@@ -152,7 +152,7 @@ function App() {
               <Button variant="outline-primary" className="evBtn" id="Ghost writing" onClick={() => addEvidence("Ghost writing")}>Ghost writing</Button>
             </div>
             <div className="col-4">
-              <Button variant="outline-primary" className="evBtn" id="Freezing temps" onClick={() => addEvidence("Freezing temps")}>Freezing temperatures</Button>
+              <Button variant="outline-primary" className="evBtn" id="Freezing temps" onClick={() => addEvidence("Freezing temps")}>Freezing temps</Button>
             </div>
             <div className="col-4"></div>
             <div className="col-4">
@@ -180,18 +180,18 @@ function App() {
             {possibilities.length === 1 &&
               <div className="attributesBox">
                 <div className="strength">
-                  <h4 className="attributes">Strength: </h4>
-                  <p>{possibilities[0].strength}</p>
+                  <span className="attributes">Strength: </span>
+                  <span>{possibilities[0].strength}</span>
                 </div>
                 <div className="weakness">
-                  <h4 className="attributes">Weakness: </h4>
-                  <p>{possibilities[0].weakness}</p>
+                  <span className="attributes">Weakness: </span>
+                  <span>{possibilities[0].weakness}</span>
                 </div>
               </div>
             }
             {possibilities.length === 0 && evidenceCount === 0 &&
               <div className="emptyBox">
-                <h4>Possible ghosts</h4>
+                <p>Possible ghosts</p>
               </div>
             }
           </ol>

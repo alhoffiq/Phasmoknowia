@@ -7,6 +7,12 @@
     src: url("/src/assets/fonts/Yahfie-Normal.ttf");
 }
 
+#ghost {
+    font-family: OctoberCrow;
+    font-size: 4rem!important;
+    font-weight: normal!important;
+}
+
 .container {
     margin-top: 5%;
 }
@@ -39,6 +45,9 @@
 .evBtn, .resBtn, .possibilitiesBox, .evBox {
     background-image: url("/src/assets/paper.jpg");
     background-size: cover;
+    font-family: Yahfie;
+    font-size: 1.5rem!important;
+    font-weight: bold!important;
 }
 
 .possibilitiesBox {
@@ -48,6 +57,7 @@
 
 .attributesBox {
     height: 100%;
+    padding-right: 10px;
 }
 
 .emptyBox {
@@ -78,7 +88,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-bottom: 0px;
+    margin-bottom: 0px!important;
     white-space: pre;
 }
 
