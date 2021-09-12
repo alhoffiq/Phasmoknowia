@@ -1,3 +1,7 @@
+body {
+    background-color: #2C2F33!important;
+}
+
 @font-face {
     font-family: OctoberCrow;
     src: url("/src/assets/fonts/October\ Crow.ttf");
@@ -72,12 +76,10 @@
 }
 
 .infoBox {
+    background-color: whitesmoke;
     margin-top: 2vh!important;
     padding: 20px;
-    background-image: url("/src/assets/whiteboard.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 65vh;
+    border: 3px solid black;
 }
 
 .info {
