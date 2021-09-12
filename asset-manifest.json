@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Phasmoknowia/static/css/main.c3cf32ab.chunk.css",
+    "main.css": "/Phasmoknowia/static/css/main.b3b10fd8.chunk.css",
     "main.js": "/Phasmoknowia/static/js/main.6022b6ae.chunk.js",
     "main.js.map": "/Phasmoknowia/static/js/main.6022b6ae.chunk.js.map",
     "runtime-main.js": "/Phasmoknowia/static/js/runtime-main.6054e214.js",
@@ -10,15 +10,15 @@
     "static/js/2.e9a58957.chunk.js.map": "/Phasmoknowia/static/js/2.e9a58957.chunk.js.map",
     "index.html": "/Phasmoknowia/index.html",
     "static/css/2.818011ed.chunk.css.map": "/Phasmoknowia/static/css/2.818011ed.chunk.css.map",
-    "static/css/main.c3cf32ab.chunk.css.map": "/Phasmoknowia/static/css/main.c3cf32ab.chunk.css.map",
+    "static/css/main.b3b10fd8.chunk.css.map": "/Phasmoknowia/static/css/main.b3b10fd8.chunk.css.map",
     "static/js/2.e9a58957.chunk.js.LICENSE.txt": "/Phasmoknowia/static/js/2.e9a58957.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/Phasmoknowia/static/media/whiteboard.ec1e0600.png"
+    "static/media/App.css": "/Phasmoknowia/static/media/paper.25163144.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6054e214.js",
     "static/css/2.818011ed.chunk.css",
     "static/js/2.e9a58957.chunk.js",
-    "static/css/main.c3cf32ab.chunk.css",
+    "static/css/main.b3b10fd8.chunk.css",
     "static/js/main.6022b6ae.chunk.js"
   ]
 }
